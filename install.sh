@@ -16,23 +16,23 @@ if [ -e /opt/pt ]; then
 fi
 
 echo "Extracting files"
-ar -x CiscoPacketTracer_810_Ubuntu_64bit.deb
+ar -x *.deb
 tar -xvf control.tar.xz
 tar -xvf data.tar.xz
 
-mv cisco-pt.desktop usr/share/applications/cisco-pt.desktop
+cp cisco-pt.desktop usr/share/applications/cisco-pt.desktop
 sudo cp -r usr /
 sudo cp -r opt /
 sudo ./postinst
 
 echo "Installing dependencies"
 sudo dnf install -y \
-  qt5-qtmultimedia.x86_64 \
-  qt5-qtwebengine.x86_64 \
-  qt5-qtnetworkauth.x86_64 \
-  qt5-qtwebsockets.x86_64 \
-  qt5-qtwebchannel.x86_64 \
-  qt5-qtscript.x86_64 \
-  qt5-qtlocation.x86_64 \
-  qt5-qtsvg.x86_64 \
+  qt5-qtmultimedia \
+  qt5-qtwebengine \
+  qt5-qtnetworkauth \
+  qt5-qtwebsockets \
+  qt5-qtwebchannel \
+  qt5-qtscript \
+  qt5-qtlocation \
+  qt5-qtsvg \
   qt5-qtspeech
